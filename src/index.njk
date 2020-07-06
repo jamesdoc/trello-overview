@@ -1,0 +1,24 @@
+---
+layout: default
+eleventyExcludeFromCollections: true
+---
+
+{% import "./_includes/macros/trello.njk" as trello %}
+
+<main class="flex justify-around w-full">
+  {% for list in metadata.lists %}
+  <section class="w-full m-2 rounded bg-background-lighter p-2">
+    <header class="mb-2">
+      <h1 class="font-bold text-background-darker">{{ list }}</h1>
+    </header>
+
+    {% for card in cards | cardsInList(list) %}
+      {{ trello.card(card) }}
+    {% endfor %}
+
+  </section>
+  {% endfor %}
+</main>
+
+
+

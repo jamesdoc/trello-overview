@@ -1,0 +1,24 @@
+
+
+{% macro card(card) %}
+<a href="{{ card.url }}" target="_blank" rel="noopener" class="block mb-2 bg-background-light hover:bg-background border-b rounded p-2">
+  <h2 class="text-darker">{{ card.name }}</h2>
+
+  <div class="flex items-center justify-between">
+    <ul>
+      <li class="inline text-xs text-background-dark">{{ card.board.name }}</li>
+
+      {% if card.dueDate %}
+      <li class="inline text-xs text-background-dark"><date>{{ card.dueDate | shortDate }}</date></li>
+      {% endif %}
+    </ul>
+
+    
+    {% if card.members %}
+      {% for member in card.members %}
+        <img class="rounded-full w-8 h-8" src="{{ member.avatar }}" alt="{{ member.fullName }}" />
+      {% endfor %}
+    {% endif %}
+  </div>
+</a>
+{% endmacro %}

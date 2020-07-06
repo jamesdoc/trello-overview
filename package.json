@@ -1,0 +1,20 @@
+{
+  "name": "trello-overview",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "watch": "ELEVENTY_ENV=development npx @11ty/eleventy --serve --port=8080 & webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "npx @11ty/eleventy & NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "dayjs": "^1.8.29",
+    "tailwindcss": "^1.4.6",
+    "url-slug": "^2.3.1"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "laravel-mix": "^5.0.1",
+    "luxon": "^1.22.2"
+  }
+}
