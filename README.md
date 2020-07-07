@@ -9,7 +9,9 @@ Nb: This isn't meant to replace Trello UI, instead just a quick overview of what
 ## In the box
 
 - [11ty](https://www.11ty.dev/)
+- [Laravel Mix](https://laravel-mix.com/)
 - [Tailwind](https://tailwindcss.com/)
+- [AlpineJS](https://github.com/alpinejs/alpine)
 
 ## Development
 
@@ -21,8 +23,12 @@ Nb: This isn't meant to replace Trello UI, instead just a quick overview of what
 
 1. `npm run production`
 
-## Next up
+## To do…
 
-- [ ] Filter by [team member, board]
+- [ ] Import private boards
+- [ ] Mix assets get version query strings
+- [x] Team member filter
+- [ ] Board filter
 - [ ] SVG icons
-- [ ] Swimlanes by [team member, board]
+- [ ] Team member swimlane
+- [ ] Board swimlane

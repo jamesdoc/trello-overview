@@ -2,9 +2,11 @@ const { trelloBoardIds, trelloLists } = require("../config.js");
 const axios = require("axios");
 const fs = require("fs");
 const cards = [];
+let cachedMembers = [];
+const cachedBoards = [];
 let iteration = 1;
 
-const outputPath = `${__dirname}/../src/_data/cards.json`;
+const outputPath = `${__dirname}/../src/_data/`;
 
 let log = function(message) {
   if (process.env.ELEVENTY_ENV === "production") return;
@@ -37,6 +39,25 @@ const cardLookup = (endpoint) => {
             ...keepAttrs
           }
         }
+      });
+
+      // We're going to create a JSON file for members as well as cards…
+      if (cachedMembers.length === 0) {
+        cachedMembers = members;
+      } else {
+        members.forEach(member => {
+          if (!cachedMembers.some((m) => m.id === member.id)) {
+            cachedMembers.push(member);
+          }
+        });
+      }
+
+      // And a list of the boards that we're pulling in…
+      cachedBoards.push({
+        id: response.data.id,
+        name: response.data.name,
+        desc: response.data.desc,
+        url: response.data.url
       });
 
       // Loop through each card on the board
@@ -78,7 +99,9 @@ const cardLookup = (endpoint) => {
 
       // When we have got all the data from the boards, store it to JSON
       if (trelloBoardIds.length == iteration) {
-        storeCards(cards);
+        writeData(cards, 'cards.json');
+        writeData(cachedMembers, 'members.json');
+        writeData(cachedBoards, 'boards.json');
         return;
       }
 
@@ -88,13 +111,14 @@ const cardLookup = (endpoint) => {
 };
 
 // Write the card data out as JSON…
-const storeCards = (cards) => {
-  fs.writeFile(outputPath, JSON.stringify(cards, null, '\t'), err => {
+const writeData = (data, file) => {
+  let fileDestination = outputPath + file;
+  fs.writeFile(fileDestination, JSON.stringify(data, null, '\t'), err => {
     if (err) {
       console.log(err);
       return;
     }
-    log(`Data saved to: ${outputPath}`);
+    log(`Data saved to: ${fileDestination}`);
   });
 }
 

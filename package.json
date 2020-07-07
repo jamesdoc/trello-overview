@@ -7,14 +7,16 @@
     "production": "npx @11ty/eleventy & NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "dependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "alpinejs": "^2.4.1",
     "axios": "^0.19.2",
     "dayjs": "^1.8.29",
+    "laravel-mix": "^5.0.1",
+    "luxon": "^1.22.2",
     "tailwindcss": "^1.4.6",
     "url-slug": "^2.3.1"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.10.0",
-    "laravel-mix": "^5.0.1",
-    "luxon": "^1.22.2"
+    "vue-template-compiler": "^2.6.11"
   }
 }

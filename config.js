@@ -33,7 +33,7 @@ module.exports = {
     background: {
       lighter: '#f4f5f7',
       light: '#ebecef',
-      default: '#b3b8c5',
+      default: '#dddfe2',
       dark: '#5f6d84',
       darker: '#192b4d'
     }

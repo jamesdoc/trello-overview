@@ -8,11 +8,15 @@
     <link rel="stylesheet" href="/assets/main.min.css" media="screen" type="text/css">
   </head>
 
-  <body>
+  <body x-data="{ filter: '' }">
 
     {% include '../partials/header.njk' %}
 
     {{ layoutContent | safe }}
+
+    <script src="/assets/manifest.min.js"></script>
+    <script src="/assets/vendor.min.js"></script>
+    <script src="/assets/main.min.js"></script>
     
     <!-- ENV: {{ metadata.env }} -->
     <!-- Last build:  {{ metadata.timestamp }} -->

@@ -1,3 +1,19 @@
-<header class="flex justify-center p-2 bg-primary text-background-lighter font-bold text-lg">
-  {{ metadata.title }}
+<header class="grid grid-cols-3 p-2 bg-primary text-background-lighter">
+  <span class=""><!--Menu--></span>
+  
+  <h1 class="font-bold text-lg text-center">
+    {{ metadata.title }}
+  </h1>
+
+  <div class="flex justify-end items-center">
+    {% for member in members %}
+      <a
+        class="float-right ml-1 rounded-full"
+        href="#"
+        :class="{ 'shadow-outline': filter === '{{ member.id }}' }"
+        @click="filter = filter === '{{ member.id }}' ? '' : '{{ member.id }}'">
+        <img src="{{ member.avatar }}" alt="{{ member.fullName }}" class="rounded-full h-6 w-6" />
+      </a>
+    {% endfor %}
+  </div>
 </header>
