@@ -17,10 +17,16 @@
 
   <div class="flex items-center justify-between">
     <ul>
-      <li class="inline text-xs text-background-dark">{{ card.board.name }}</li>
+      <li class="inline-flex items-center text-xs text-background-dark mr-2">
+        {% svgIcon 'board', 'h-3 w-3 inline-block mr-1' %}
+        {{ card.board.name }}
+      </li>
 
       {% if card.dueDate %}
-      <li class="inline text-xs text-background-dark"><date>{{ card.dueDate | shortDate }}</date></li>
+      <li class="inline-flex items-center text-xs text-background-dark">
+        {% svgIcon 'date', 'h-3 w-3 inline-block mr-1' %} 
+        <date>Due: {{ card.dueDate | shortDate }}</date>
+      </li>
       {% endif %}
     </ul>
 

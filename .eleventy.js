@@ -1,11 +1,17 @@
 // const { DateTime } = require("luxon");
 const filters = require('./utils/filters.js');
+const shortcodes = require('./utils/shortcodes.js');
 
 module.exports = function (eleventyConfig){
 
   // Filters
   Object.keys(filters).forEach((filterName) => {
     eleventyConfig.addFilter(filterName, filters[filterName]);
+  });
+
+  // shortcodes
+  Object.keys(shortcodes).forEach((shortcode) => {
+    eleventyConfig.addShortcode(shortcode, shortcodes[shortcode]);
   });
 
   eleventyConfig.addLayoutAlias('default', 'layouts/base.njk');

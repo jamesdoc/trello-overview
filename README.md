@@ -29,6 +29,6 @@ Nb: This isn't meant to replace Trello UI, instead just a quick overview of what
 - [ ] Mix assets get version query strings
 - [x] Team member filter
 - [ ] Board filter
-- [ ] SVG icons
+- [x] SVG icons
 - [ ] Team member swimlane
 - [ ] Board swimlane

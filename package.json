@@ -8,15 +8,17 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^0.10.0",
+    "@ayctor/laravel-mix-svg-sprite": "^1.0.0",
     "alpinejs": "^2.4.1",
     "axios": "^0.19.2",
     "dayjs": "^1.8.29",
     "laravel-mix": "^5.0.1",
     "luxon": "^1.22.2",
     "tailwindcss": "^1.4.6",
-    "url-slug": "^2.3.1"
+    "url-slug": "^2.3.1",
+    "vue-template-compiler": "^2.6.11"
   },
   "devDependencies": {
-    "vue-template-compiler": "^2.6.11"
+    "svg-spritemap-webpack-plugin": "^3.5.6"
   }
 }

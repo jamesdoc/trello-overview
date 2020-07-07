@@ -35,7 +35,7 @@ const cardLookup = (endpoint) => {
         {
           return {
             // Store the avatar URL… 50.png is also an option
-            avatar: `https://trello-members.s3.amazonaws.com/${keepAttrs['id']}/${keepAttrs['avatarHash']}/170.png`,
+            avatar: `https://trello-members.s3.amazonaws.com/${keepAttrs['id']}/${keepAttrs['avatarHash']}/50.png`,
             ...keepAttrs
           }
         }

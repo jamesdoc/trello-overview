@@ -1,10 +1,11 @@
 const mix = require('laravel-mix');
-const tailwindcss = require('tailwindcss')
+const tailwindcss = require('tailwindcss');
+const svgSprite = require('@ayctor/laravel-mix-svg-sprite');
 
 // Run mix
-
 mix
   .setPublicPath(`dist`)
+  .sourceMaps()
   .postCss('./src/_assets/main.css', 'assets', [
     require('tailwindcss'),
   ])
@@ -16,6 +17,6 @@ mix
     './dist/assets/main.js',
     './dist/assets/main.css'
   ])
-  .sourceMaps()
+  .svgSprite('./src/_assets/svg/**/*.svg', 'assets/sprite.svg')
   .version();
 
