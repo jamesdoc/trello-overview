@@ -30,5 +30,6 @@ Nb: This isn't meant to replace Trello UI, instead just a quick overview of what
 - [x] Team member filter
 - [ ] Board filter
 - [x] SVG icons
+- [x] Favicon
 - [ ] Team member swimlane
 - [ ] Board swimlane

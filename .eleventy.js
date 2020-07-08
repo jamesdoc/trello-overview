@@ -14,10 +14,14 @@ module.exports = function (eleventyConfig){
     eleventyConfig.addShortcode(shortcode, shortcodes[shortcode]);
   });
 
+  // Alias the base layout so it can be referred to as `layout: default`
   eleventyConfig.addLayoutAlias('default', 'layouts/base.njk');
 
   // Watch assets folder for changes
   eleventyConfig.addWatchTarget('./src/_assets');
+
+  // Copy these assets straight across
+  eleventyConfig.addPassthroughCopy({'./src/_assets/favicon': 'assets/favicon'});
 
   eleventyConfig.setDataDeepMerge(true);
 
