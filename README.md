@@ -4,7 +4,11 @@ Do you have that problem of having a multiple team members on multiple projects 
 
 Trello Overview is a simple tool to give you a quick overview of what your team is working on right now. Give it boards you want it to keep an eye on, and the lists to pull cards from and it will merge the lists into one virtual board.
 
+[See a live demo](https://trello-overview.netlify.app/)
+
 Nb: This isn't meant to replace Trello UI, instead just a quick overview of what is happening across multiple boards.
+
+![Screenshot of Trello Overview](preview.jpg)
 
 ## In the box
 
@@ -13,7 +17,14 @@ Nb: This isn't meant to replace Trello UI, instead just a quick overview of what
 - [Tailwind](https://tailwindcss.com/)
 - [AlpineJS](https://github.com/alpinejs/alpine)
 
-## A note about prviate boards…
+## Development
+
+1. `npm install`
+2. Update `config.js` with the `trelloBoardIds` and the `trelloLists` to pull in.
+3. If pulling in from private boards create a `.env` file (see below).
+4. `npm run watch`
+
+### A note about prviate boards…
 
 To access data from private Trello boards you'll need an [API key and token](https://trello.com/app-key):
 
@@ -32,13 +43,6 @@ This should be obvious, but… this project will pull in the cards from your pri
 
 _Public Trello boards are public via the API, so if you're only accessing public boards you won't need to do this._
 
-## Development
-
-1. `npm install`
-2. Update `config.js` with the `trelloBoardIds` and the `trelloLists` to pull in.
-3. If pulling in from private boards create a `.env` file (see above).
-4. `npm run watch
-
 ## Production
 
 1. `npm run production`
@@ -53,5 +57,5 @@ _Public Trello boards are public via the API, so if you're only accessing public
 - [x] Favicon
 - [ ] Team member swimlane
 - [ ] Board swimlane
-- [ ] Netlify demo board
+- [x] Netlify demo board
 - [ ] Improve layout for mobile and for more than 3 lists
