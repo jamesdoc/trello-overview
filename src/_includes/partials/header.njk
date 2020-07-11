@@ -1,5 +1,13 @@
 <header class="grid grid-cols-3 p-2 bg-primary text-background-lighter">
-  <span class=""><!--Menu--></span>
+  <div class="flex items-center">
+    <a
+      href="#"
+      class=""
+      @click="nav = !nav">
+      {% svgIcon 'menu', 'h-6 w-6 inline-block' %}
+      <span x-text="nav ? 'Close' : 'Menu'">Menu</span>
+    </a>
+  </div>
   
   <h1 class="font-bold text-lg text-center">
     {{ metadata.title }}
@@ -10,8 +18,8 @@
       <a
         class="float-right ml-1 rounded-full"
         href="#"
-        :class="{ 'shadow-outline': filter === '{{ member.id }}' }"
-        @click="filter = filter === '{{ member.id }}' ? '' : '{{ member.id }}'">
+        :class="{ 'shadow-outline': personFilter === '{{ member.id }}' }"
+        @click="boardFilter = ''; personFilter = personFilter === '{{ member.id }}' ? '' : '{{ member.id }}'">
         <img src="{{ member.avatar }}" alt="{{ member.fullName }}" class="rounded-full h-6 w-6" />
       </a>
     {% endfor %}

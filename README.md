@@ -50,12 +50,13 @@ _Public Trello boards are public via the API, so if you're only accessing public
 ## To do…
 
 - [x] Import private boards
-- [ ] Mix assets get version query strings
+- [ ] Laravel Mix assets get version query strings
 - [x] Team member filter
-- [ ] Board filter
+- [x] Board filter
 - [x] SVG icons
 - [x] Favicon
 - [ ] Team member swimlane
 - [ ] Board swimlane
 - [x] Netlify demo board
-- [ ] Improve layout for mobile and for more than 3 lists
+- [ ] Improved filters (eg filter by board AND person)
+- [ ] Improved layout for mobile and for more than 3 lists

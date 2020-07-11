@@ -6,6 +6,9 @@ eleventyExcludeFromCollections: true
 {% import "./_includes/macros/trello.njk" as trello %}
 
 <main class="flex justify-around w-full">
+
+  {% include './_includes/partials/nav.njk' %}
+
   {% for list in metadata.lists %}
   <section class="w-full m-2 rounded bg-background-lighter p-2">
     <header class="mb-2">

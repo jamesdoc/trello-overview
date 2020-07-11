@@ -2,7 +2,7 @@
 
 {% macro card(card) %}
 
-{% set memberFilter %}filter === '' {% for member in card.members %}|| filter == '{{ member.id }}'{% endfor %}{% endset %}
+{% set memberFilter %}boardFilter === '' && personFilter === '' || boardFilter === '{{ card.board.id }}' {% for member in card.members %}|| personFilter == '{{ member.id }}'{% endfor %}{% endset %}
 
 <a
   href="{{ card.url }}"
