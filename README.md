@@ -8,7 +8,7 @@ Trello Overview is a simple tool to give you a quick overview of what your team 
 
 Nb: This isn't meant to replace Trello UI, instead just a quick overview of what is happening across multiple boards.
 
-![Screenshot of Trello Overview](preview.jpg)
+![Screenshot of Trello Overview](docs/preview.jpg)
 
 ## In the box
 
