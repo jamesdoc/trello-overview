@@ -1,6 +1,7 @@
 <header class="grid grid-cols-3 p-2 bg-primary text-background-lighter">
   <div class="flex items-center">
     <a
+      aria-label="Toggle navigation"
       href="#"
       class=""
       @click="nav = !nav">
@@ -16,6 +17,7 @@
   <div class="flex justify-end items-center">
     {% for member in members %}
       <a
+        aria-label="Filter cards by {{ member.fullName }}"
         class="float-right ml-1 rounded-full"
         href="#"
         :class="{ 'shadow-outline': personFilter === '{{ member.id }}' }"

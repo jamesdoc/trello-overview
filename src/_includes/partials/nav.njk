@@ -1,10 +1,11 @@
 <nav x-show.transisition="nav" class="w-full p-2 m-2 mr-0">
   <h2 class="font-bold text-background-darker mb-2">
-    Boards
+    Board filter
   </h2>
 
   {% for board in boards | sort(false, false, 'name') %}
     <a
+      aria-label="Filter cards by {{ board.name }}"
       href="#"
       @click="personFilter = ''; boardFilter = boardFilter === '{{ board.id }}' ? '' : '{{ board.id }}'"
       :class="{ 'shadow-outline': boardFilter === '{{ board.id }}' }"

@@ -5,6 +5,7 @@
 {% set memberFilter %}boardFilter === '' && personFilter === '' || boardFilter === '{{ card.board.id }}' {% for member in card.members %}|| personFilter == '{{ member.id }}'{% endfor %}{% endset %}
 
 <a
+  aria-label="Card: {{ card.name }} on the board {{ card.board.name }}"
   href="{{ card.url }}"
   target="_blank"
   rel="noopener"
@@ -34,7 +35,7 @@
     {% if card.members %}
     <div class="flex justify-end">
       {% for member in card.members %}
-        <img class="rounded-full w-8 h-8 ml-1" src="{{ member.avatar }}" alt="{{ member.fullName }}" />
+        <img class="rounded-full w-8 h-8 ml-1" src="{{ member.avatar }}" alt="Assigned to {{ member.fullName }}" />
       {% endfor %}
     </div>
     {% endif %}
