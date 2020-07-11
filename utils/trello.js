@@ -1,3 +1,6 @@
+require('dotenv').config();
+const trelloKey = process.env.TRELLO_API_KEY || null;
+const trelloToken = process.env.TRELLO_API_TOKEN || null;
 const { trelloBoardIds, trelloLists } = require("../config.js");
 const axios = require("axios");
 const fs = require("fs");
@@ -14,8 +17,20 @@ let log = function(message) {
 };
 
 const cardLookup = (endpoint) => {
+
+  let keys = null;
+
+  if (trelloKey) {
+    keys = {
+      key: trelloKey,
+      token: trelloToken,
+    };
+  }
+
   return axios
-    .get(endpoint)
+    .get(endpoint, {
+      params: keys
+    })
     .then(response => {
 
       // Get an array of the board's lists that we care about

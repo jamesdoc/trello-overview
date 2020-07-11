@@ -9,14 +9,15 @@ module.exports = {
   // https://trello.com/b/H3ImVSBv/board-slug
   trelloBoardIds: [
     'H3ImVSBv',
-    'DdcFqmdv'
+    'DdcFqmdv',
+    'XBTESJ8e',
   ],
 
   // Trello lists to import…
   trelloLists: [
     'To Do',
     'Doing',
-    'Done'
+    'Done',
   ],
 
   // Theme colors… ala Tailwind
@@ -27,7 +28,7 @@ module.exports = {
       light: '#4888b9',
       default: '#036aa7',
       dark: '#386581',
-      darker: '#42526e'
+      darker: '#42526e',
     },
 
     background: {
@@ -35,7 +36,7 @@ module.exports = {
       light: '#ebecef',
       default: '#dddfe2',
       dark: '#5f6d84',
-      darker: '#192b4d'
+      darker: '#192b4d',
     }
   }
 
