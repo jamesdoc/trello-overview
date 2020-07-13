@@ -139,6 +139,6 @@ const writeData = (data, file) => {
 
 // Actually do the work…
 trelloBoardIds.forEach(boardId => {
-  trelloBoardUrl = `https://api.trello.com/1/boards/${boardId}?cards=all&members=all&checklists=all&lists=all`;
+  trelloBoardUrl = `https://api.trello.com/1/boards/${boardId}?cards=visible&members=all&checklists=all&lists=all`;
   cardLookup(trelloBoardUrl);
 });
