@@ -20,8 +20,8 @@
         aria-label="Filter cards by {{ member.fullName }}"
         class="float-right ml-1 rounded-full"
         href="#"
-        :class="{ 'shadow-outline': personFilter === '{{ member.id }}' }"
-        @click="boardFilter = ''; personFilter = personFilter === '{{ member.id }}' ? '' : '{{ member.id }}'">
+        :class="{ 'shadow-outline': memberVisible('{{ member.id }}') }"
+        @click="togglePersonFilter('{{ member.id}}');  boardFilter = '';">
         <img src="{{ member.avatar }}" alt="{{ member.fullName }}" class="rounded-full h-6 w-6" />
       </a>
     {% endfor %}

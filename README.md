@@ -58,5 +58,5 @@ _Public Trello boards are public via the API, so if you're only accessing public
 - [ ] Team member swimlane
 - [ ] Board swimlane
 - [x] Netlify demo board
-- [ ] Improved filters (eg filter by board AND person)
+- [x] Improved filters (eg filter by board AND person)
 - [x] Improved layout for mobile and for more than 3 lists

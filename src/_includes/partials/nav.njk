@@ -7,8 +7,8 @@
     <a
       aria-label="Filter cards by {{ board.name }}"
       href="#"
-      @click="personFilter = ''; boardFilter = boardFilter === '{{ board.id }}' ? '' : '{{ board.id }}'"
-      :class="{ 'shadow-outline': boardFilter === '{{ board.id }}' }"
+      @click="toggleBoardFilter('{{ board.id }}')"
+      :class="{ 'shadow-outline': boardVisible('{{ board.id }}') }"
       class="flex items-center my-2 p-2 bg-background-lighter rounded hover:bg-background-light">
       {% svgIcon 'board', 'h-3 w-3 inline-block mr-2' %}
       {{ board.name }}

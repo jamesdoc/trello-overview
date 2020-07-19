@@ -2,15 +2,13 @@
 
 {% macro card(card) %}
 
-{% set memberFilter %}boardFilter === '' && personFilter === '' || boardFilter === '{{ card.board.id }}' {% for member in card.members %}|| personFilter == '{{ member.id }}'{% endfor %}{% endset %}
-
 <a
   aria-label="Card: {{ card.name }} on the board {{ card.board.name }}"
   href="{{ card.url }}"
   target="_blank"
   rel="noopener"
   class="block mb-2 bg-background-light hover:bg-background border-b rounded p-2"
-  x-show.transition="{{ memberFilter }}">
+  x-show.transition="cardVisible('{{ card.board.id }}', [{% for member in card.members %}'{{ member.id }}',{% endfor %}])">
   
   <h2 class="text-darker">
     {{ card.name }}
