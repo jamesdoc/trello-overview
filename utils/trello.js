@@ -1,3 +1,5 @@
+const { themeColors } = require("../config.js");
+
 require('dotenv').config();
 const trelloKey = process.env.TRELLO_API_KEY || null;
 const trelloToken = process.env.TRELLO_API_TOKEN || null;
@@ -48,9 +50,18 @@ const cardLookup = (endpoint) => {
         ...keepAttrs}
       ) => {
         {
+          
+          let avatarUrl = '';
+          
+          if (keepAttrs['avatarHash'] !== null) {
+            avatarUrl = `https://trello-members.s3.amazonaws.com/${keepAttrs['id']}/${keepAttrs['avatarHash']}/50.png`;
+          } else {
+            avatarUrl = `https://eu.ui-avatars.com/api/?name=${keepAttrs['fullName']}&bold=true&background=${themeColors.background.default.replace('#','')}&color=${themeColors.primary.default.replace('#','')}`;
+          }
+
           return {
             // Store the avatar URL… 50.png is also an option
-            avatar: `https://trello-members.s3.amazonaws.com/${keepAttrs['id']}/${keepAttrs['avatarHash']}/50.png`,
+            avatar: avatarUrl,
             ...keepAttrs
           }
         }
