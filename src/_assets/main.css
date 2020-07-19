@@ -1,5 +1,34 @@
 @tailwind base;
 
+.listCol {
+  @apply m-2 rounded bg-background-lighter p-2 overflow-y-scroll max-h-full-excludeBanner;
+  min-width: calc(100% - 1rem);
+}
+
+@screen sm {
+  .listCol {
+    min-width: calc(50% - 1rem);
+  }
+}
+
+@screen md {
+  .listCol {
+    min-width: calc(33.333% - 1rem);
+  }
+}
+
+@screen lg {
+  .listCol {
+    min-width: calc(20% - 1rem);
+  }
+}
+
+@screen xl {
+  .listCol {
+    min-width: calc(16.666% - 1rem);
+  }
+}
+
 @tailwind components;
 
 @tailwind utilities;

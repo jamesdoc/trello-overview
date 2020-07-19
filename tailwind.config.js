@@ -8,8 +8,23 @@ module.exports = {
     theme: {
       extend: {
         colors: themeColors,
+        maxHeight: {
+          'full-excludeBanner': 'calc(100vh - 43px - 1rem)'
+        },
+        minWidth: {
+          '0': '0',
+          '1/6': 'calc(16.6% - 1rem)',
+          '1/5': 'calc(20% - 1rem)',
+          '1/4': 'calc(25% - 1rem)',
+          '1/3': 'calc(33.3% - 1rem)',
+          '1/2': 'calc(50% - 1rem)',
+          '3/4': '75%',
+          'full': '100%',
+        },
       },
     },
-    variants: {},
+    variants: {
+      minWidth: ['responsive']
+    },
     plugins: [],
 };
