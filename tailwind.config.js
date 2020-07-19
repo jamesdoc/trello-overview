@@ -21,6 +21,9 @@ module.exports = {
           '3/4': '75%',
           'full': '100%',
         },
+        boxShadow: theme => ({
+          outline: '0 0 0 2px ' + theme('colors.primary.dark')
+        }),
       },
     },
     variants: {
