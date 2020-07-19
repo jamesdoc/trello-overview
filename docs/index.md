@@ -25,5 +25,5 @@ This is intentionally not trying to clone all the functionality of a Trello boar
 [x] Board filter  
 [ ] Team member swimlane  
 [ ] Board swimlane  
-[ ] Improved filters (eg filter by board AND person)  
-[ ] Improved layout for mobile and for more than 3 lists
+[x] Improved filters (eg filter by board AND person)  
+[x] Improved layout for mobile and for more than 3 lists
