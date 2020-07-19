@@ -8,7 +8,7 @@ module.exports = {
     theme: {
       extend: {
         colors: themeColors,
-        maxHeight: {
+        height: {
           'full-excludeBanner': 'calc(100vh - 43px - 1rem)'
         },
         minWidth: {

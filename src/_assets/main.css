@@ -1,7 +1,7 @@
 @tailwind base;
 
 .listCol {
-  @apply m-2 rounded bg-background-lighter p-2 overflow-y-scroll max-h-full-excludeBanner;
+  @apply m-2 rounded bg-background-lighter p-2 overflow-y-scroll w-full h-full-excludeBanner;
   min-width: calc(100% - 1rem);
 }
 
