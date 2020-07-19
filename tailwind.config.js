@@ -11,6 +11,10 @@ module.exports = {
         height: {
           'full-excludeBanner': 'calc(100vh - 43px - 1rem)'
         },
+        maxHeight: {
+          '4': '1rem',
+          '6': '1.5rem',
+        },
         minWidth: {
           '0': '0',
           '1/6': 'calc(16.6% - 1rem)',

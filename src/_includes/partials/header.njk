@@ -14,7 +14,11 @@
     {{ metadata.title }}
   </h1>
 
-  <div class="flex justify-end items-center">
+  <div class="flex justify-end items-start max-h-6 relative">
+    <div
+      class="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 gap-2 z-10 bg-primary pb-2 pl-1 pr-1 rounded-b absolute r-0 mt-8  md:mt-0 md:relative"
+      :class="{ 'hidden max-h-6 overflow-y-hidden md:grid' : !peopleDrawerOpen }"
+    >
     {% for member in members %}
       <a
         aria-label="Filter cards by {{ member.fullName }}"
@@ -25,5 +29,17 @@
         <img src="{{ member.avatar }}" alt="{{ member.fullName }}" class="rounded-full h-6 w-6" />
       </a>
     {% endfor %}
+    </div>
+
+    <a
+      aria-label="Toggle person filter"
+      href="#"
+      class="w-20 text-right"
+      @click="peopleDrawerOpen = !peopleDrawerOpen"
+      x-show="4 <= {{ members.length }}">
+      <span x-text="peopleDrawerOpen ? 'Hide' : 'Show'">Member Filter</span>
+      {% svgIcon 'people', 'h-6 w-6 inline-block' %}
+    </a>
+    
   </div>
 </header>
